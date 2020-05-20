@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/walk-safe-home/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/walk-safe-home/static/js/main.03c14aa9.chunk.js",
+    "main.js.map": "/walk-safe-home/static/js/main.03c14aa9.chunk.js.map",
+    "runtime-main.js": "/walk-safe-home/static/js/runtime-main.37eed7be.js",
+    "runtime-main.js.map": "/walk-safe-home/static/js/runtime-main.37eed7be.js.map",
+    "static/js/2.7f55d112.chunk.js": "/walk-safe-home/static/js/2.7f55d112.chunk.js",
+    "static/js/2.7f55d112.chunk.js.map": "/walk-safe-home/static/js/2.7f55d112.chunk.js.map",
+    "index.html": "/walk-safe-home/index.html",
+    "precache-manifest.2e59ba8bfb935fba322fedc2a8c5aaf0.js": "/walk-safe-home/precache-manifest.2e59ba8bfb935fba322fedc2a8c5aaf0.js",
+    "service-worker.js": "/walk-safe-home/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/walk-safe-home/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.7f55d112.chunk.js.LICENSE.txt": "/walk-safe-home/static/js/2.7f55d112.chunk.js.LICENSE.txt",
+    "static/media/PanicButton.png": "/walk-safe-home/static/media/PanicButton.1b547c0f.png",
+    "static/media/PanicButtonPressed.png": "/walk-safe-home/static/media/PanicButtonPressed.b31420be.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.37eed7be.js",
+    "static/js/2.7f55d112.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.03c14aa9.chunk.js"
+  ]
+}
