@@ -188,7 +188,7 @@ const App = () => {
         <Typography variant="body2">
           made with &hearts; by Shrey Ravi for free<br />
           WalkSafe &#8962; is not a replacement for law enforcement/safety<br />
-          <a href="https://www.shreyravi.com/contact.html">Contact</a> | <a href="#">Legal</a> | <a href="https://github.com/ShreyRavi/walk-safe-home">GitHub</a> | <a href="#">v1.0</a>
+          <a href="https://www.shreyravi.com/contact.html">Contact</a> | <a href="#">Legal</a> | <a href="https://github.com/ShreyRavi/walk-safe-home">GitHub</a> | <a href="https://github.com/ShreyRavi/walk-safe-home/commit/cdab0072a54bd6e8f479ee4489367fb4d9f66eed">v1.0</a>
         </Typography>
 
       
