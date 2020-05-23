@@ -6,6 +6,7 @@
   "dependencies": {
     "@material-ui/core": "^4.9.14",
     "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.53",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -13,7 +14,9 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-geolocation": "^1.0.4",
-    "react-scripts": "3.4.1"
+    "react-hold-button": "^0.5.0",
+    "react-scripts": "3.4.1",
+    "webpack-cli": "^3.3.11"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -39,6 +42,15 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0"
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.5.3",
+    "gh-pages": "^2.2.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0"
   }
 }
