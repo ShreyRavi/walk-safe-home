@@ -4,6 +4,7 @@ import MessageIcon from '@material-ui/icons/Message';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import Footer from './Footer';
 import CallInput from './CallInput';
+import TextInput from './TextInput';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -12,6 +13,10 @@ const useStyles = makeStyles((theme) => ({
         height: '100%',
         padding: '40px',
         backgroundColor: '#F44335',
+    },
+    directions: {
+        fontWeight: 'bolder',
+        marginBottom: '10px',
     },
     divider: {
         marginTop: '20px',
@@ -55,34 +60,12 @@ const SettingsDrawer = ({settingsOpen, setSettingsOpen, callNumber, setCallNumbe
                 localStorage={localStorage}
             />
 
-            {/*Settings - TextInput*/}
             <Divider className={classes.divider} />
-            <Typography className={classes.directions} variant="body2">Enter number(s) to text:<br /></Typography>
-            <TextField 
-            className={classes.callInput} 
-            onInput={(e) => {setTextNumbers(e.target.value.split(",")); localStorage.set("wsh-text",e.target.value);}} 
-            id="TextInput" 
-            label="Emergency Number(s) to Text &#128241;" 
-            variant="outlined" 
-            value={textNumbers.join()}
-            inputProps={{style: { textAlign: 'center' }}}
-            >
-            </TextField>
-            <Typography variant="body2">seperate each number with a comma<br />e.g. "4408379929,7739939992"<br /></Typography>
 
-            {/*Settings - TextsShow*/}
-            <Divider className={classes.divider} />
-            <Typography variant="body2">Numbers texted when the panic button pressed:</Typography>
-            <List dense={true}>
-                {textNumbers.map(e => 
-                <ListItem>
-                <ListItemIcon>
-                    <MessageIcon />
-                </ListItemIcon>
-                <ListItemText primary={e}></ListItemText>
-                </ListItem>
-                )}
-            </List>
+            <TextInput 
+                textNumbers={textNumbers}
+                setTextNumbers={setTextNumbers}
+            />
 
             <Footer classes={classes} />
 

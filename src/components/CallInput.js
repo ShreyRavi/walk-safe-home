@@ -4,13 +4,13 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     callInput: {
-        width: "80%",
+        width: "100%",
         textAlign: "center",
-      },
-      directions: {
+    },
+    directions: {
         fontWeight: 'bolder',
-        marginTop: '10px',
-      },
+        marginBottom: '10px',
+    },
 }));
 
 const CallInput = ({callNumber, setCallNumber, localStorage}) => {
@@ -22,7 +22,7 @@ const CallInput = ({callNumber, setCallNumber, localStorage}) => {
       }, []);
     return(
         <div>
-            <Typography className={classes.directions} variant="body2">Enter number to call:<br /></Typography>
+            <Typography className={classes.directions} variant="body2">Enter number to call:</Typography>
             <TextField 
             className={classes.callInput} 
             onInput={(e) => {if(/^\d+$/.test(e.target.value)){setCallNumber(e.target.value); localStorage.set("wsh-call",e.target.value);}}} 

@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
 const App = () => {
   //initialize styles
   const classes = useStyles();
-  
+
   //local storage keys: wsh-call, wsh-text
   var localStorage = require('local-storage');
 
