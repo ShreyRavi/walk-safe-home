@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
       },
 }));
 
-const PanicButton = ({handlePanic, panicBtnPressed, handleCloseError, handleCloseSuccess}) => {
+const PanicButton = ({handlePanic, panicBtnPressed, showError, handleCloseError, handleCloseSuccess}) => {
     const classes = useStyles();
     return(
         <Geolocation
@@ -32,6 +32,7 @@ const PanicButton = ({handlePanic, panicBtnPressed, handleCloseError, handleClos
             <div>
               {/*PanicButton*/}
               <Fab className={classes.panicButton} size="large" variant="round" color="secondary" onClick={() => {getCurrentPosition(); handlePanic()}}><div className={classes.panicButtonText}>&#8962;</div></Fab>
+
               {panicBtnPressed ? 
                 <Snackbar open={panicBtnPressed} autoHideDuration={15000} onClose={handleCloseSuccess}>
                   <Alert onClose={handleCloseSuccess} severity="success">
@@ -39,11 +40,13 @@ const PanicButton = ({handlePanic, panicBtnPressed, handleCloseError, handleClos
                   </Alert>
                 </Snackbar>
               : <div></div>}
-              {error && <Snackbar open={panicBtnPressed} onClose={handleCloseError} autoHideDuration={15000}> 
+
+              {error && <Snackbar open={showError} onClose={handleCloseError} autoHideDuration={15000}> 
                 <Alert onClose={handleCloseError} severity="error">
                   {error.message}
                 </Alert>
               </Snackbar>}
+
               <Typography className={classes.hidden} variant="body2">
                 LATITUDE:  {parseFloat(latitude).toFixed(4)}<br />
                 LONGITUDE: {parseFloat(longitude).toFixed(4)}

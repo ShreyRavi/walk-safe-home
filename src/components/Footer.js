@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, Typography } from '@material-ui/core';
+import { Divider, Typography, Link } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -20,7 +20,7 @@ const Footer = ({}) => {
             <Typography variant="body2">
             Made with &hearts; by Shrey Ravi<br />
             WalkSafe &#8962; is not a replacement for law enforcement/safety<br />
-            <a className={classes.links} href="https://www.shreyravi.com/contact.html">Contact</a> | <a className={classes.links} href="#">Legal</a> | <a className={classes.links} href="https://github.com/ShreyRavi/walk-safe-home">GitHub</a> | <a className={classes.links} href="https://github.com/ShreyRavi/walk-safe-home/commits/master">Version 4</a>
+            <Link color="info" className={classes.links} href="https://www.shreyravi.com/contact.html">Contact</Link> | <Link color="info" className={classes.links} href="#">Legal</Link> | <Link color="info" className={classes.links} href="https://github.com/ShreyRavi/walk-safe-home">GitHub</Link> | <Link color="info" className={classes.links} href="https://github.com/ShreyRavi/walk-safe-home/commits/master">Version 5</Link>
             </Typography>
         </div>
     );

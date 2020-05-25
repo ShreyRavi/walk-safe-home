@@ -17,6 +17,9 @@ const theme = createMuiTheme({
     secondary: {
       main: '#D32F2F',
     },
+    info: {
+      main: '#00008D'
+    },
   },
 });
 
@@ -48,7 +51,12 @@ const App = () => {
   const [helpOpen, setHelpOpen] = useState(false);
   const [callNumber, setCallNumber] = useState("911")
   const [panicBtnPressed, setPanicBtnPressed] = useState(false);
-  const [textNumbers, setTextNumbers] = useState([]);
+  const [showError, setShowError] = useState(false);
+  const [textNumber1, setTextNumber1] = useState("");
+  const [textNumber2, setTextNumber2] = useState("");
+  const [textNumber3, setTextNumber3] = useState("");
+  const [textNumber4, setTextNumber4] = useState("");
+  const [textNumber5, setTextNumber5] = useState("");
    
   //Function Props to handle all logic
 
@@ -58,13 +66,19 @@ const App = () => {
       setCallNumber(localStorage.get("wsh-call"));
     }
     if(localStorage("wsh-text") != null){
-      setTextNumbers(localStorage.get("wsh-text").split(","));
+      const getLSnums = localStorage.get("wsh-text").split(",");
+      setTextNumber1(getLSnums[0]);
+      setTextNumber2(getLSnums[1]);
+      setTextNumber3(getLSnums[2]);
+      setTextNumber4(getLSnums[3]);
+      setTextNumber5(getLSnums[4]);
     }
   }, []);
 
   //On Panic Button Pressed
   const handlePanic = () => {
     setPanicBtnPressed(true);
+    setShowError(true);
     window.location.href = "tel://" + callNumber;
   }
 
@@ -73,12 +87,15 @@ const App = () => {
     if (r === 'clickaway') {
       return;
     }
-    setPanicBtnPressed(false);
+    setShowError(false);
   }
 
   //On Closing Success Snackbar
   const handleCloseSuccess = (e, r) => {
-    handleCloseError(e, r);
+    if (r === 'clickaway') {
+      return;
+    }
+    setPanicBtnPressed(false);
   }
 
   return (
@@ -95,8 +112,16 @@ const App = () => {
         setSettingsOpen={setSettingsOpen}
         callNumber={callNumber}
         setCallNumber={setCallNumber}
-        textNumbers={textNumbers}
-        setTextNumbers={setTextNumbers}
+        textNumber1={textNumber1}
+        textNumber2={textNumber2}
+        textNumber3={textNumber3}
+        textNumber4={textNumber4}
+        textNumber5={textNumber5}
+        setTextNumber1={setTextNumber1}
+        setTextNumber2={setTextNumber2}
+        setTextNumber3={setTextNumber3}
+        setTextNumber4={setTextNumber4}
+        setTextNumber5={setTextNumber5}
       />
 
       <Header 
@@ -114,6 +139,7 @@ const App = () => {
 
         <PanicButton 
           handlePanic={handlePanic}
+          showError={showError}
           panicBtnPressed={panicBtnPressed}
           handleCloseError={handleCloseError}
           handleCloseSuccess={handleCloseSuccess}

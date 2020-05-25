@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
-import { Typography, TextField } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
 
 const useStyles = makeStyles((theme) => ({
     callInput: {
@@ -20,19 +22,18 @@ const CallInput = ({callNumber, setCallNumber, localStorage}) => {
           setCallNumber(localStorage.get("wsh-call"));
         }
       }, []);
+    useEffect(() => {
+        localStorage.set("wsh-call", callNumber);
+    }, [callNumber]);
     return(
         <div>
             <Typography className={classes.directions} variant="body2">Enter number to call:</Typography>
-            <TextField 
-            className={classes.callInput} 
-            onInput={(e) => {if(/^\d+$/.test(e.target.value)){setCallNumber(e.target.value); localStorage.set("wsh-call",e.target.value);}}} 
-            id="CallInput" 
-            label="Emergency Number to Call &#9742;" 
-            variant="outlined" 
-            value={callNumber}
-            inputProps={{style: { textAlign: 'center' }}}
-            >
-            </TextField>
+            <PhoneInput 
+                placeholder="Enter number to call"
+                defaultCountry="US"
+                value={callNumber}
+                onChange={setCallNumber}
+            />
         </div>
     );
 }

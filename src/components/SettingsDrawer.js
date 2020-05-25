@@ -1,6 +1,5 @@
 import React from 'react';
-import { Drawer, Grid, IconButton, Typography, Divider, TextField, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
-import MessageIcon from '@material-ui/icons/Message';
+import { Drawer, Grid, IconButton, Typography, Divider } from '@material-ui/core';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import Footer from './Footer';
 import CallInput from './CallInput';
@@ -27,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const SettingsDrawer = ({settingsOpen, setSettingsOpen, callNumber, setCallNumber, textNumbers, setTextNumbers}) => {
+const SettingsDrawer = ({settingsOpen, setSettingsOpen, callNumber, setCallNumber, textNumber1, textNumber2, textNumber3, textNumber4, textNumber5, setTextNumber1, setTextNumber2, setTextNumber3, setTextNumber4, setTextNumber5}) => {
     const classes = useStyles();
     var localStorage = require('local-storage');
     return(
@@ -62,9 +61,18 @@ const SettingsDrawer = ({settingsOpen, setSettingsOpen, callNumber, setCallNumbe
 
             <Divider className={classes.divider} />
 
-            <TextInput 
-                textNumbers={textNumbers}
-                setTextNumbers={setTextNumbers}
+            <TextInput
+                closeSettings={() => {setSettingsOpen(false)}}
+                textNumber1={textNumber1}
+                textNumber2={textNumber2}
+                textNumber3={textNumber3}
+                textNumber4={textNumber4}
+                textNumber5={textNumber5}
+                setTextNumber1={setTextNumber1}
+                setTextNumber2={setTextNumber2}
+                setTextNumber3={setTextNumber3}
+                setTextNumber4={setTextNumber4}
+                setTextNumber5={setTextNumber5}
             />
 
             <Footer classes={classes} />
