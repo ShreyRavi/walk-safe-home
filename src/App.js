@@ -15,7 +15,7 @@ const theme = createMuiTheme({
     },
     primary: red,
     secondary: {
-      main: '#F44335',
+      main: '#D32F2F',
     },
   },
 });
@@ -48,7 +48,7 @@ const App = () => {
   const [helpOpen, setHelpOpen] = useState(false);
   const [callNumber, setCallNumber] = useState("911")
   const [panicBtnPressed, setPanicBtnPressed] = useState(false);
-  const [textNumbers, setTextNumbers] = useState(["No Texting Numbers Stored!"]);
+  const [textNumbers, setTextNumbers] = useState([]);
    
   //Function Props to handle all logic
 

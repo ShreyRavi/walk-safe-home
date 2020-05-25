@@ -31,7 +31,7 @@ const PanicButton = ({handlePanic, panicBtnPressed, handleCloseError, handleClos
           }) =>
             <div>
               {/*PanicButton*/}
-              <Fab className={classes.panicButton} size="large" variant="round" color="primary" onClick={() => {getCurrentPosition(); handlePanic()}}><div className={classes.panicButtonText}>&#8962;</div></Fab>
+              <Fab className={classes.panicButton} size="large" variant="round" color="secondary" onClick={() => {getCurrentPosition(); handlePanic()}}><div className={classes.panicButtonText}>&#8962;</div></Fab>
               {panicBtnPressed ? 
                 <Snackbar open={panicBtnPressed} autoHideDuration={15000} onClose={handleCloseSuccess}>
                   <Alert onClose={handleCloseSuccess} severity="success">
