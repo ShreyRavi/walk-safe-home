@@ -43,6 +43,12 @@ const App = () => {
   //initialize styles
   const classes = useStyles();
 
+  //twilio
+  //require('dotenv').config()
+  //const accountSid = process.env.TWILIO_ACCOUNT_SID;
+  //const authToken = process.env.TWILIO_AUTH_TOKEN;
+  //const client = require('twilio')(accountSid, authToken);
+
   //local storage keys: wsh-call, wsh-text
   var localStorage = require('local-storage');
 
@@ -80,6 +86,46 @@ const App = () => {
     setPanicBtnPressed(true);
     setShowError(true);
     window.location.href = "tel://" + callNumber;
+
+    /*client.messages
+    .create({
+      body: 'Your friend may be in an emergency! Please call them ASAP.',
+      from: process.env.TWILIO_NUMBER,
+      to: textNumber1
+    })
+    .then(message => console.log(message.sid));
+
+    client.messages
+    .create({
+      body: 'Your friend may be in an emergency! Please call them ASAP.',
+      from: process.env.TWILIO_NUMBER,
+      to: textNumber2
+    })
+    .then(message => console.log(message.sid));
+
+    client.messages
+    .create({
+      body: 'Your friend may be in an emergency! Please call them ASAP.',
+      from: process.env.TWILIO_NUMBER,
+      to: textNumber3
+    })
+    .then(message => console.log(message.sid));
+
+    client.messages
+    .create({
+      body: 'Your friend may be in an emergency! Please call them ASAP.',
+      from: process.env.TWILIO_NUMBER,
+      to: textNumber4
+    })
+    .then(message => console.log(message.sid));
+
+    client.messages
+    .create({
+      body: 'Your friend may be in an emergency! Please call them ASAP.',
+      from: process.env.TWILIO_NUMBER,
+      to: textNumber5
+    })
+    .then(message => console.log(message.sid));*/
   }
 
   //On Closing Error Snackbar
