@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/walk-safe-home/precache-manifest.3a68d943ab89bec12b328341cb2b65ea.js"
+  "/walk-safe-home/precache-manifest.284b0b6af424363001e05639e2dbdeb7.js"
 );
 
 self.addEventListener('message', (event) => {
