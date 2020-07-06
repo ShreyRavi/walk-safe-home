@@ -2,7 +2,7 @@
 WalkSafe Home is a React-powered personal safety app in development that provides easy access to emergency contact with the click of just one button. Inspired by friends who needed a lightweight panic button application that did not require an app download and would work on any device.
 
 # Usage
-Head over to [http://www.walksafe.co](this link) to see the React Live web-app. React Native versions will be pushed on a seperate branch on this repository named `walksafe-react-native` when completed and published.
+Head over to [www.walksafe.co](http://www.walksafe.co) to see the React Live web-app. React Native versions will be pushed on a seperate branch on this repository named `walksafe-react-native` when completed and published.
 
 # Source
 1. Clone repository
